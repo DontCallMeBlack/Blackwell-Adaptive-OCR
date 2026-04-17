@@ -1,0 +1,12 @@
+# Hardware: NVIDIA Blackwell RTX 5060 Target
+optimization:
+  sparsity_pattern: "2:4"
+  global_bit_depth: 8
+  
+layers:
+  attention:
+    precision: 8  # High precision for crucial linguistic features
+    dropout: 0.1
+  feed_forward:
+    precision: 4  # Aggressive compression for redundant features
+    expansion_factor: 4
